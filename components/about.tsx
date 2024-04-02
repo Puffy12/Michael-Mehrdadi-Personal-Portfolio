@@ -27,7 +27,7 @@ export default function About() {
         <span className="font-medium">
           React, Next.js, Node.js, and MongoDB
         </span>
-        . I am also familiar with TypeScript and Mango DB. I am always eager to
+        . I am also familiar with TypeScript and Tailwind CSS. I am always eager to
         learn new technologies and stay updated on industry trends. I am currently seeking
         opportunities for a{" "}
         <span className="font-medium"> software engineering or web developer role</span>.
@@ -36,7 +36,7 @@ export default function About() {
       <p className="mb-3">
         <span className="italic">When I&apos;m not coding</span>, I enjoy traveling, going to the gym, and going on runs. I also enjoy{" "}
         <span className="font-medium">learning new things</span>. I am currently learning {" "}
-        <span className="font-medium">japanese and have been for 5 years</span>. I&apos;m also Machine Learning.
+        <span className="font-medium">japanese and have been for 5 years</span>. I&apos;m also learning about Machine Learning/ AI.
       </p>
     </motion.section>
   );
