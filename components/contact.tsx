@@ -58,7 +58,7 @@ export default function Contact() {
           required
           maxLength={5000}
         />
-        <button type="submit"> Submit</button>
+        <SubmitBtn />
       </form>
     </motion.section>
   );
