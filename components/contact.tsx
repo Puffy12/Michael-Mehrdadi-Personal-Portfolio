@@ -2,11 +2,24 @@
 
 import React from "react";
 import SectionHeading from "./section-heading";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
+import { FaArrowCircleDown } from "react-icons/fa";
+
+const arrowVariants: Variants = {
+  animate: {
+    y: [0, -15, 0],
+    transition: {
+      duration: 1.2,
+      ease: "easeInOut",
+      repeat: Infinity,
+      repeatType: "loop", // Ensure this is a specific string literal, not just 'string'
+    },
+  },
+};
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
@@ -31,13 +44,24 @@ export default function Contact() {
     >
       <SectionHeading>Contact me</SectionHeading>
 
-      <p className="text-gray-700 -mt-6 dark:text-white/80">
+      <p className="text-gray-700 -mt-6 dark:text-white/80" style={{ textAlign: "center" }}>
         Please contact me directly at{" "}
-        <a className="underline" href="mailto:example@gmail.com">
-          example@gmail.com
-        </a>{" "}
+        <a className="underline" href="mailto:michaelmehrdadi123@gmail.com">
+          michaelmehrdadi123@gmail.com
+        </a>{" "} <br></br>
         or through this form.
       </p>
+
+      
+      <motion.div
+        variants={arrowVariants}
+        animate="animate"
+        style={{ cursor: "pointer", display: "flex", justifyContent: "center"}}
+      >
+        <div className="mt-6 flex justify-center mb-6 text-white w-14 h-14 text-3xl cursor-pointer z-10 ">
+          <FaArrowCircleDown />
+        </div>
+      </motion.div>
 
       <form
         className="mt-10 flex flex-col dark:text-black"
