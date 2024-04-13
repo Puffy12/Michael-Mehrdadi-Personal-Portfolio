@@ -75,6 +75,7 @@ export const projectsData = [
       "SacStateIEEE Website is a Next.js & TailwindCSS web application, hosted on Vercel for the IEE Club at CSUS",
     tags: ["React", "Next.js", "Vercel", "Typescript","FramerMotion"],
     imageUrl: corpcommentImg,
+    url: "https://sacstateieee.com/",
   },
   {
     title: "Game of Life (Java)",
@@ -82,6 +83,7 @@ export const projectsData = [
       "The Game of Life concept game(cellular automaton) made using a custom java graphics engine built from the ground up, Link.",
     tags: ["Java", "OpenGL", "Object Oriented", "Graphics Engine"],
     imageUrl: rmtdevImg,
+    url: "https://github.com/Puffy12/Game-of-Life-Java-",
   },
   {
     title: "Youtube MP3/MP4 Downloader",
@@ -89,6 +91,7 @@ export const projectsData = [
       "Video downloader application with a modern graphical user interface (GUI) using Python. With a supporting API",
     tags: ["Python 3", "GUI", "API", "Downloader"],
     imageUrl: wordanalyticsImg,
+    url: "https://github.com/Puffy12/Youtube-MP3-MP4-Downloader",
   },
 ] as const;
 
