@@ -58,7 +58,7 @@ export default function Contact() {
         animate="animate"
         style={{ cursor: "pointer", display: "flex", justifyContent: "center"}}
       >
-        <div className="mt-6 flex justify-center mb-6 text-white w-14 h-14 text-3xl cursor-pointer z-10 ">
+        <div className="mt-6 flex justify-center mb-6 w-14 h-14 text-3xl cursor-pointer z-10 text-black dark:text-white">
           <FaArrowCircleDown />
         </div>
       </motion.div>
