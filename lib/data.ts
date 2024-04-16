@@ -70,7 +70,7 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "Sac State IEE",
+    title: "Sac State IEEE",
     description:
       "SacStateIEEE Website is a Next.js & TailwindCSS web application, hosted on Vercel for the IEE Club at CSUS",
     tags: ["React", "Next.js", "Vercel", "Typescript","FramerMotion"],
