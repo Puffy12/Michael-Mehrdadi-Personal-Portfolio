@@ -5,6 +5,7 @@ import { LuGraduationCap } from "react-icons/lu";
 import corpcommentImg from "@/public/corpcomment.png";
 import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
+import WordGame from "@/public/ReactWordGame.png";
 
 export const links = [
   {
@@ -78,12 +79,12 @@ export const projectsData = [
     url: "https://sacstateieee.com/",
   },
   {
-    title: "Game of Life (Java)",
+    title: "Vite Word Games",
     description:
-      "The Game of Life concept game(cellular automaton) made using a custom java graphics engine built from the ground up, Link.",
-    tags: ["Java", "OpenGL", "Object Oriented", "Graphics Engine"],
-    imageUrl: rmtdevImg,
-    url: "https://github.com/Puffy12/Game-of-Life-Java-",
+      "Enjoy a dynamic collection of word games with Vite Word Games, a Vite, Vercel, React, and TypeScript-powered web app, designed for quick fun with friends.",
+    tags: ["Vite", "Vercel", "Tailwind", "Typescript", "Word Games"],
+    imageUrl: WordGame,
+    url: "https://react-word-games.vercel.app/",
   },
   {
     title: "Youtube MP3/MP4 Downloader",
@@ -92,6 +93,14 @@ export const projectsData = [
     tags: ["Python 3", "GUI", "API", "Downloader"],
     imageUrl: wordanalyticsImg,
     url: "https://github.com/Puffy12/Youtube-MP3-MP4-Downloader",
+  },
+  {
+    title: "Game of Life (Java)",
+    description:
+      "The Game of Life concept game(cellular automaton) made using a custom java graphics engine built from the ground up, Link.",
+    tags: ["Java", "OpenGL", "Object Oriented", "Graphics Engine"],
+    imageUrl: rmtdevImg,
+    url: "https://github.com/Puffy12/Game-of-Life-Java-",
   },
 ] as const;
 
