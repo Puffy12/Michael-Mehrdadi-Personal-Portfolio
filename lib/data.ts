@@ -6,6 +6,7 @@ import corpcommentImg from "@/public/corpcomment.png";
 import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
 import WordGame from "@/public/ReactWordGame.png";
+import JaredPort from "@/public/JaredPort.png";
 
 export const links = [
   {
@@ -87,12 +88,12 @@ export const projectsData = [
     url: "https://react-word-games.vercel.app/",
   },
   {
-    title: "Youtube MP3/MP4 Downloader",
+    title: "Jared Eastlick Personal Portfolio",
     description:
-      "Video downloader application with a modern graphical user interface (GUI) using Python. With a supporting API",
-    tags: ["Python 3", "GUI", "API", "Downloader"],
-    imageUrl: wordanalyticsImg,
-    url: "https://github.com/Puffy12/Youtube-MP3-MP4-Downloader",
+      "A personal portfolio website built with Next.js and Chakra UI, showcasing the work, experience, hobbies, and contact information of freelance writer Jared Eastlick. ",
+    tags: ["Next.js", "Chakura UI", "Tailwind", "Javascript", "Portfolio"],
+    imageUrl: JaredPort,
+    url: "https://jared-eastlick-portfolio.vercel.app/",
   },
   {
     title: "Game of Life (Java)",
@@ -101,6 +102,14 @@ export const projectsData = [
     tags: ["Java", "OpenGL", "Object Oriented", "Graphics Engine"],
     imageUrl: rmtdevImg,
     url: "https://github.com/Puffy12/Game-of-Life-Java-",
+  },
+  {
+    title: "Youtube MP3/MP4 Downloader",
+    description:
+      "Video downloader application with a modern graphical user interface (GUI) using Python. With a supporting API",
+    tags: ["Python 3", "GUI", "API", "Downloader"],
+    imageUrl: wordanalyticsImg,
+    url: "https://github.com/Puffy12/Youtube-MP3-MP4-Downloader",
   },
 ] as const;
 
