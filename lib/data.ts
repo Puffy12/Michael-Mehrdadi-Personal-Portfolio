@@ -46,7 +46,7 @@ export const experiencesData = [
   },
   {
     title: "Front-End Developer",
-    location: "Sacrmento, CA",
+    location: "Sacramento, CA",
     description:
       "I worked as a front-end developer for 1 year intering at American River Design Hub. I also upskilled to the full stack.",
     icon: React.createElement(CgWorkAlt),
@@ -64,7 +64,7 @@ export const experiencesData = [
     title: "Full-Stack Developer",
     location: "Sacrmento, CA",
     description:
-      "I'm now a full-stack developer working as a freelancer. My main stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
+      "I'm now a full-stack developer working as a freelancer. My main stack includes React, Next.js, TypeScript, Tailwind, Vercel and MongoDB. I'm open to full-time opportunities.",
     icon: React.createElement(FaReact),
     date: "2023 - present",
   },
