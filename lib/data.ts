@@ -7,6 +7,8 @@ import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
 import WordGame from "@/public/ReactWordGame.png";
 import JaredPort from "@/public/JaredPort.png";
+import DimEyeShow from "@/public/Purneet.png";
+
 
 export const links = [
   {
@@ -86,14 +88,15 @@ export const projectsData = [
     tags: ["Vite", "Vercel", "Tailwind", "Typescript", "Word Games"],
     imageUrl: WordGame,
     url: "https://react-word-games.vercel.app/",
+    
   },
   {
-    title: "Jared Eastlick Personal Portfolio",
+    title: "Dim Eye Show Podcast website",
     description:
-      "A personal portfolio website built with Next.js and Chakra UI, showcasing the work, experience, hobbies, and contact information of freelance writer Jared Eastlick. ",
-    tags: ["Next.js", "Chakura UI", "Tailwind", "Javascript", "Portfolio"],
-    imageUrl: JaredPort,
-    url: "https://jared-eastlick-portfolio.vercel.app/",
+      "This commissioned project was built using Next.js, TypeScript, and TailwindCSS, featuring a dynamic, responsive design with animated UI elements and social media integration created for the Dim Eye Show.",
+    tags: ["Next.js", "Typescript", "Tailwind", "Podcast"],
+    imageUrl: DimEyeShow,
+    url: "https://purneet-website.vercel.app/",
   },
   {
     title: "Game of Life (Java)",
@@ -102,6 +105,14 @@ export const projectsData = [
     tags: ["Java", "OpenGL", "Object Oriented", "Graphics Engine"],
     imageUrl: rmtdevImg,
     url: "https://github.com/Puffy12/Game-of-Life-Java-",
+  },
+  {
+    title: "Jared Eastlick Personal Portfolio",
+    description:
+      "A personal portfolio website built with Next.js and Chakra UI, showcasing the work, experience, hobbies, and contact information of freelance writer Jared Eastlick. ",
+    tags: ["Next.js", "Chakura UI", "Tailwind", "Javascript", "Portfolio"],
+    imageUrl: JaredPort,
+    url: "https://jared-eastlick-portfolio.vercel.app/",
   },
   {
     title: "Youtube MP3/MP4 Downloader",
@@ -121,6 +132,7 @@ export const skillsData = [
   "Next.js",
   "Node.js",
   "Express.js",
+  "Svelte",
   "CSS",
   "HTML",
   "MongoDB",
@@ -141,6 +153,8 @@ export const skillsData = [
   "Microsoft Office",
   "Postman API",
   "Tableau",
+  "Data Science",
+  "Cyber Security",
   "Customer Service",
   "Data Visualization",
   "Proficient Programming Skills",
