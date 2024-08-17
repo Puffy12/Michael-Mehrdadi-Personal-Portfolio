@@ -19,3 +19,5 @@ export default function Home() {
     </main>
   )
 }
+
+//import Reviews from "@/components/reviews";       <Reviews />

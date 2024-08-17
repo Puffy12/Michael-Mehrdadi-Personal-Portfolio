@@ -8,6 +8,9 @@ import wordanalyticsImg from "@/public/wordanalytics.png";
 import WordGame from "@/public/ReactWordGame.png";
 import JaredPort from "@/public/JaredPort.png";
 import DimEyeShow from "@/public/Purneet.png";
+import Person1 from "@/public/person1.jpg"
+import Person2 from "@/public/person2.jpg"
+import Person3 from "@/public/person3.jpg"
 
 
 export const links = [
@@ -36,6 +39,13 @@ export const links = [
     hash: "#contact",
   },
 ] as const;
+
+/*
+  {
+    name: "Reviews",
+    hash: '#reviews',
+  },
+*/
 
 export const experiencesData = [
   {
@@ -171,7 +181,7 @@ export const reviews = [
     name: 'susan smith',
     job: 'web developer',
     image:
-      'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883334/person-1_rfzshl.jpg',
+      Person1,
     text:
       "I'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry",
   },
@@ -180,7 +190,7 @@ export const reviews = [
     name: 'anna johnson',
     job: 'web designer',
     image:
-      'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883409/person-2_np9x5l.jpg',
+    Person2,
     text:
       'Helvetica artisan kinfolk thundercats lumbersexual blue bottle. Disrupt glossier gastropub deep v vice franzen hell of brooklyn twee enamel pin fashion axe.photo booth jean shorts artisan narwhal.',
   },
@@ -189,17 +199,9 @@ export const reviews = [
     name: 'peter jones',
     job: 'intern',
     image:
-      'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883417/person-3_ipa0mj.jpg',
+      Person3,
     text:
       'Sriracha literally flexitarian irony, vape marfa unicorn. Glossier tattooed 8-bit, fixie waistcoat offal activated charcoal slow-carb marfa hell of pabst raclette post-ironic jianbing swag.',
   },
-  {
-    id: 4,
-    name: 'bill anderson',
-    job: 'the boss',
-    image:
-      'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883423/person-4_t9nxjt.jpg',
-    text:
-      'Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic. ',
-  },
 ] as const;
+
