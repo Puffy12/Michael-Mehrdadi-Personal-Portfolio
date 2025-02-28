@@ -1,6 +1,7 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
+import { TbDatabaseImport } from "react-icons/tb";
 import { LuGraduationCap } from "react-icons/lu";
 import corpcommentImg from "@/public/corpcomment.png";
 import rmtdevImg from "@/public/rmtdev.png";
@@ -80,6 +81,15 @@ export const experiencesData = [
     icon: React.createElement(FaReact),
     date: "2023 - present",
   },
+  {
+    title: "STEM Student Intern",
+    location: "Sacramento, CA",
+    description:
+      "Developed Python scripts to automate tasks and streamline workflows, created web-scraping tools for data collection and analysis, performed data transformations and visualizations in ObservableHQ, and managed XML batch testing.",
+    icon: React.createElement(TbDatabaseImport),
+    date: "2024 - present",
+  }
+  
 ] as const;
 
 export const projectsData = [
