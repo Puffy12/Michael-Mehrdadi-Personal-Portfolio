@@ -99,7 +99,7 @@ export const projectsData = [
       "SacStateIEEE Website is a Next.js & TailwindCSS web application, hosted on Vercel for the IEEE Club at CSUS",
     tags: ["React", "Next.js", "Vercel", "Typescript","FramerMotion"],
     imageUrl: corpcommentImg,
-    url: "https://sacstateieee.com/",
+    url: "https://ieee-web-app.vercel.app/",
   },
   {
     title: "Vite Word Games",
