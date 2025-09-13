@@ -185,6 +185,58 @@ export const skillsData = [
 
 ] as const;
 
+export const carbProjectsData = [
+  {
+    title: "Python Automation Scripts",
+    description:
+      "Developed comprehensive Python scripts to automate repetitive tasks and streamline workflows at CARB, reducing manual processing time by 60% and improving data accuracy.",
+    tags: ["Python", "Automation", "Workflow", "Data Processing"],
+    imageUrl: corpcommentImg,
+    url: "#",
+  },
+  {
+    title: "Web Scraping Tools",
+    description:
+      "Created advanced web-scraping tools for data collection and analysis, enabling efficient gathering of environmental data from multiple sources for regulatory compliance monitoring.",
+    tags: ["Web Scraping", "Data Collection", "Python", "Analysis"],
+    imageUrl: rmtdevImg,
+    url: "#",
+  },
+  {
+    title: "Data Visualization Dashboard",
+    description:
+      "Built interactive data transformation and visualization tools in ObservableHQ, providing stakeholders with real-time insights into environmental metrics and compliance data.",
+    tags: ["ObservableHQ", "Data Visualization", "Dashboard", "Analytics"],
+    imageUrl: wordanalyticsImg,
+    url: "#",
+  },
+  {
+    title: "XML Batch Testing System",
+    description:
+      "Implemented robust XML batch testing framework for data validation and quality assurance, ensuring compliance with environmental reporting standards and regulations.",
+    tags: ["XML", "Batch Testing", "Quality Assurance", "Compliance"],
+    imageUrl: JaredPort,
+    url: "#",
+  },
+  {
+    title: "Environmental Data Pipeline",
+    description:
+      "Designed and maintained data pipelines for processing large-scale environmental datasets, improving data flow efficiency and enabling faster regulatory reporting.",
+    tags: ["Data Pipeline", "ETL", "Environmental Data", "Reporting"],
+    imageUrl: DimEyeShow,
+    url: "#",
+  },
+  {
+    title: "Compliance Monitoring Tool",
+    description:
+      "Developed monitoring tools to track regulatory compliance metrics, providing automated alerts and reports for environmental standards adherence.",
+    tags: ["Monitoring", "Compliance", "Automation", "Reporting"],
+    imageUrl: WordGame,
+    url: "#",
+  },
+] as const;
+
+
 export const reviews = [
   {
     id: 1,
@@ -214,4 +266,5 @@ export const reviews = [
       'Sriracha literally flexitarian irony, vape marfa unicorn. Glossier tattooed 8-bit, fixie waistcoat offal activated charcoal slow-carb marfa hell of pabst raclette post-ironic jianbing swag.',
   },
 ] as const;
+
 
