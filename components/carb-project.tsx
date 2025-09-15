@@ -37,27 +37,27 @@ export default function CarbProject({
       className="group mb-6 sm:mb-8 last:mb-0"
     >
       <section className="bg-white dark:bg-gray-800 max-w-[50rem] border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 relative">
-        <div className="p-6 sm:p-8">
+        <div className="p-4 sm:p-6 lg:p-8">
           {url === "#" ? (
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
               {title}
             </h3>
           ) : (
             <a href={url} target="_blank" className="block">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                 {title}
               </h3>
             </a>
           )}
           
-          <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 text-base">
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
             {description}
           </p>
           
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-1 sm:gap-2">
             {tags.map((tag, index) => (
               <span
-                className="bg-gradient-to-r from-blue-500 to-green-500 px-3 py-1 text-sm font-medium text-white rounded-full"
+                className="bg-gradient-to-r from-blue-500 to-green-500 px-2 py-1 text-xs sm:text-sm font-medium text-white rounded-full"
                 key={index}
               >
                 {tag}
@@ -67,7 +67,7 @@ export default function CarbProject({
         </div>
         
         {url === "#" ? (
-          <div className="relative h-64 w-full overflow-hidden">
+          <div className="relative h-48 sm:h-64 w-full overflow-hidden">
             <Image
               src={imageUrl}
               alt="Project I worked on"
@@ -79,7 +79,7 @@ export default function CarbProject({
           </div>
         ) : (
           <a href={url} target="_blank" className="block">
-            <div className="relative h-64 w-full overflow-hidden">
+            <div className="relative h-48 sm:h-64 w-full overflow-hidden">
               <Image
                 src={imageUrl}
                 alt="Project I worked on"

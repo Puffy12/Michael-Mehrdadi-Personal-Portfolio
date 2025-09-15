@@ -28,9 +28,9 @@ export default function CarbHeader({ activeSection, setActiveSection }: CarbHead
 
       <nav className="flex fixed top-[0.15rem] left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
         {/* CARB Logo */}
-        <div className="absolute -left-28 top-1/2 -translate-y-1/2">
+        <div className="absolute -left-16 sm:-left-28 top-1/2 -translate-y-1/2">
           <motion.div
-            className="relative w-12 h-12"
+            className="relative w-8 h-8 sm:w-12 sm:h-12"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.3 }}
@@ -44,7 +44,7 @@ export default function CarbHeader({ activeSection, setActiveSection }: CarbHead
           </motion.div>
         </div>
 
-        <ul className="flex w-[22rem] flex-wrap items-center justify-center gap-y-2 text-base sm:w-[initial] sm:flex-nowrap sm:gap-5 sm:text-[0.9rem]">
+        <ul className="flex w-[18rem] flex-wrap items-center justify-center gap-y-2 text-sm sm:w-[initial] sm:flex-nowrap sm:gap-5 sm:text-[0.9rem]">
           {carbLinks.map((link) => (
             <motion.li
               className="flex items-center justify-center relative"
@@ -54,7 +54,7 @@ export default function CarbHeader({ activeSection, setActiveSection }: CarbHead
             >
               <Link
                 className={clsx(
-                  "flex min-w-[6rem] items-center justify-center rounded-md px-4 py-2 text-gray-500 hover:text-gray-950 transition dark:text-gray-400 dark:hover:text-gray-200 sm:min-w-0 sm:px-3 sm:py-2",
+                  "flex min-w-[5rem] items-center justify-center rounded-md px-3 py-2 text-gray-500 hover:text-gray-950 transition dark:text-gray-400 dark:hover:text-gray-200 sm:min-w-0 sm:px-3 sm:py-2",
                   {
                     "text-gray-950 dark:text-gray-200":
                       activeSection === link.name,

@@ -34,7 +34,7 @@ export default function CarbPage() {
       
       <CarbHeader activeSection={activeSection} setActiveSection={setActiveSection} />
       
-      <main className="relative z-10 flex flex-col items-center px-4 pt-20">
+      <main className="relative z-10 flex flex-col items-center px-4 pt-16 sm:pt-20">
         {/* Home Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -43,16 +43,16 @@ export default function CarbPage() {
           className="w-full max-w-6xl"
         >
           {/* Intro Section */}
-          <section id="home" className="relative text-center py-20">
+          <section id="home" className="relative text-center py-12 sm:py-20">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 px-4">
                 California Air Resources Board
               </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+              <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 px-4">
                 Showcasing my contributions and accomplishments during my internship
               </p>
               <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-green-500 mx-auto rounded-full"></div>
@@ -60,16 +60,16 @@ export default function CarbPage() {
           </section>
 
           {/* About Section */}
-          <section className="text-center py-16">
+          <section className="text-center py-12 sm:py-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-6">
+              <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-white mb-4 sm:mb-6 px-4">
                 About My Role
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-4xl mx-auto">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-4xl mx-auto px-4">
                 As a Student Intern at the California Air Resources Board, I used 
                 my expertise encompassed developing sophisticated Python automation scripts, conducting comprehensive 
                 RMP data analysis spanning over a decade of historical records, and orchestrating strategic 
@@ -97,37 +97,37 @@ export default function CarbPage() {
             transition={{ duration: 0.5 }}
             className="w-full max-w-7xl"
           >
-            <section id="projects" className="py-16">
+            <section id="projects" className="py-12 sm:py-16">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-center mb-12"
+                className="text-center mb-8 sm:mb-12"
               >
-                <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-4">
+                <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 px-4">
                   Key Accomplishments
                 </h2>
-                <p className="text-lg text-gray-600 dark:text-gray-300">
+                <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 px-4">
                   Explore the projects and tools I developed during my internship
                 </p>
               </motion.div>
 
               {/* Navigation Controls */}
-              <div className="flex justify-center items-center mb-8">
+              <div className="flex justify-center items-center mb-6 sm:mb-8 px-4">
                 <button
                   onClick={prevPage}
-                  className="p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 mr-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="p-2 sm:p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 mr-3 sm:mr-4 disabled:opacity-50 disabled:cursor-not-allowed"
                   disabled={totalPages <= 1}
                 >
-                  <FaChevronLeft className="w-6 h-6 text-gray-600 dark:text-gray-300" />
+                  <FaChevronLeft className="w-4 h-4 sm:w-6 sm:h-6 text-gray-600 dark:text-gray-300" />
                 </button>
                 
-                <div className="flex space-x-2">
+                <div className="flex space-x-1 sm:space-x-2">
                   {Array.from({ length: totalPages }, (_, i) => (
                     <button
                       key={i}
                       onClick={() => setCurrentIndex(i)}
-                      className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                         i === currentIndex
                           ? "bg-blue-500 scale-125"
                           : "bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500"
@@ -138,10 +138,10 @@ export default function CarbPage() {
 
                 <button
                   onClick={nextPage}
-                  className="p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 ml-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="p-2 sm:p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 ml-3 sm:ml-4 disabled:opacity-50 disabled:cursor-not-allowed"
                   disabled={totalPages <= 1}
                 >
-                  <FaChevronRight className="w-6 h-6 text-gray-600 dark:text-gray-300" />
+                  <FaChevronRight className="w-4 h-4 sm:w-6 sm:h-6 text-gray-600 dark:text-gray-300" />
                 </button>
               </div>
 
@@ -154,7 +154,7 @@ export default function CarbPage() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -50 }}
                     transition={{ duration: 0.5 }}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-4"
                   >
                     {currentProjects.map((project, index) => (
                       <motion.div
@@ -172,8 +172,8 @@ export default function CarbPage() {
               </div>
 
               {/* Page Indicator */}
-              <div className="text-center mt-8">
-                <p className="text-sm text-gray-500 dark:text-gray-400">
+              <div className="text-center mt-6 sm:mt-8 px-4">
+                <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
                   Page {currentIndex + 1} of {totalPages}
                 </p>
               </div>

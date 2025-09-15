@@ -7,6 +7,7 @@ import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
 import Footer from "@/components/footer";
+import ConditionalHeader from "@/components/conditional-header";
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -31,7 +32,7 @@ export default function RootLayout({
 
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
-            <Header />
+            <ConditionalHeader />
             {children}
             <Footer />
 
