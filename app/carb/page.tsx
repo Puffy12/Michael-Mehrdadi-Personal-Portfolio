@@ -75,8 +75,8 @@ export default function CarbPage() {
                 RMP data analysis spanning over a decade of historical records, and orchestrating strategic 
                 compliance outreach campaigns. Through innovative XML batch testing frameworks and advanced 
                 semiconductor regulation tools, I delivered measurable improvements in operational efficiency 
-                while ensuring unwavering adherence to California's stringent environmental standards. My work 
-                directly contributed to CARB's mission of protecting public health and preserving our environment 
+                while ensuring unwavering adherence to California&apos;s stringent environmental standards. My work 
+                directly contributed to CARB&apos;s mission of protecting public health and preserving our environment 
                 through technological solutions and data driven insights.
               </p>
             </motion.div>
