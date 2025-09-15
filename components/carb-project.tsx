@@ -38,11 +38,17 @@ export default function CarbProject({
     >
       <section className="bg-white dark:bg-gray-800 max-w-[50rem] border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 relative">
         <div className="p-6 sm:p-8">
-          <a href={url} target="_blank" className="block">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+          {url === "#" ? (
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
               {title}
             </h3>
-          </a>
+          ) : (
+            <a href={url} target="_blank" className="block">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                {title}
+              </h3>
+            </a>
+          )}
           
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 text-base">
             {description}
@@ -60,7 +66,7 @@ export default function CarbProject({
           </div>
         </div>
         
-        <a href={url} target="_blank" className="block">
+        {url === "#" ? (
           <div className="relative h-64 w-full overflow-hidden">
             <Image
               src={imageUrl}
@@ -71,7 +77,20 @@ export default function CarbProject({
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
-        </a>
+        ) : (
+          <a href={url} target="_blank" className="block">
+            <div className="relative h-64 w-full overflow-hidden">
+              <Image
+                src={imageUrl}
+                alt="Project I worked on"
+                quality={95}
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+          </a>
+        )}
       </section>
     </motion.div>
   );

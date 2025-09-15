@@ -12,6 +12,12 @@ import DimEyeShow from "@/public/Purneet.png";
 import Person1 from "@/public/person1.jpg"
 import Person2 from "@/public/person2.jpg"
 import Person3 from "@/public/person3.jpg"
+import AllHandsImg from "@/public/CARB/All-Hands.png"
+import DataAnalysisImg from "@/public/CARB/Data-Anaylsis .png"
+import SF6Img from "@/public/CARB/SF6.png"
+import SemiImg from "@/public/CARB/Semi.png"
+import OutreachImg from "@/public/CARB/Outreach.png"
+import XMLImg from "@/public/CARB/XML.png"
 
 
 export const links = [
@@ -187,51 +193,51 @@ export const skillsData = [
 
 export const carbProjectsData = [
   {
-    title: "Python Automation Scripts",
+    title: "All Hands Presentation",
     description:
-      "Developed comprehensive Python scripts to automate repetitive tasks and streamline workflows at CARB, reducing manual processing time by 60% and improving data accuracy.",
-    tags: ["Python", "Automation", "Workflow", "Data Processing"],
-    imageUrl: corpcommentImg,
+      "Presented comprehensive analysis of RMP (Refrigerant Management Program) data spanning from 2011 to present, showcasing how compliance has evolved and demonstrating the effectiveness of facility detail data for refrigeration systems across California. The presentation highlighted key insights and trends in environmental compliance.",
+    tags: ["Data Analysis", "Presentation", "RMP", "Compliance"],
+    imageUrl: AllHandsImg,
     url: "#",
   },
   {
-    title: "Web Scraping Tools",
+    title: "RMP Data Analysis",
     description:
-      "Created advanced web-scraping tools for data collection and analysis, enabling efficient gathering of environmental data from multiple sources for regulatory compliance monitoring.",
-    tags: ["Web Scraping", "Data Collection", "Python", "Analysis"],
-    imageUrl: rmtdevImg,
+      "Leveraged the modernized refrigerant management reporting tool to analyze historical data from 2011 onwards, examining compliance trends and the effectiveness of refrigeration systems in California. Conducted comprehensive analysis of facility detail data to identify patterns and improvements in environmental compliance.",
+    tags: ["Data Analysis", "RMP", "Compliance", "Historical Data"],
+    imageUrl: DataAnalysisImg,
     url: "#",
   },
   {
-    title: "Data Visualization Dashboard",
+    title: "SF6 Form Automation Script",
     description:
-      "Built interactive data transformation and visualization tools in ObservableHQ, providing stakeholders with real-time insights into environmental metrics and compliance data.",
-    tags: ["ObservableHQ", "Data Visualization", "Dashboard", "Analytics"],
-    imageUrl: wordanalyticsImg,
+      "Developed a comprehensive Python script to export SF6 reporting forms in a single cleaned and condensed format, streamlining the export process and performing automated data analysis. The script was compiled into an executable with full documentation covering usage instructions and technical details for future development.",
+    tags: ["Python", "Automation", "SF6", "Data Processing"],
+    imageUrl: SF6Img,
     url: "#",
   },
   {
-    title: "XML Batch Testing System",
+    title: "Catch All Semiconductor Automation Script",
     description:
-      "Implemented robust XML batch testing framework for data validation and quality assurance, ensuring compliance with environmental reporting standards and regulations.",
-    tags: ["XML", "Batch Testing", "Quality Assurance", "Compliance"],
-    imageUrl: JaredPort,
+      "Created an advanced Python automation script for Catch All Semiconductor regulation compliance, featuring 16 complex sheets with enhanced data categorization and analysis capabilities. This sophisticated tool includes comprehensive documentation and additional features for improved regulatory reporting efficiency.",
+    tags: ["Python", "Automation", "Semiconductor", "Complex Forms"],
+    imageUrl: SemiImg,
     url: "#",
   },
   {
-    title: "Environmental Data Pipeline",
+    title: "RMP Compliance Outreach",
     description:
-      "Designed and maintained data pipelines for processing large-scale environmental datasets, improving data flow efficiency and enabling faster regulatory reporting.",
-    tags: ["Data Pipeline", "ETL", "Environmental Data", "Reporting"],
-    imageUrl: DimEyeShow,
+      "Utilized D&B data and the modernized RMP database to conduct targeted outreach by excluding already-reporting companies from registered entities with likely reporting NAICS codes (supermarkets, large refrigeration, wineries). Successfully identified and contacted companies, many of which had switched to glycol systems, while others were educated about compliance requirements.",
+    tags: ["Outreach", "Compliance", "Data Analysis", "Stakeholder Engagement"],
+    imageUrl: OutreachImg,
     url: "#",
   },
   {
-    title: "Compliance Monitoring Tool",
+    title: "XML Batch Testing for Modernized RMP Tool",
     description:
-      "Developed monitoring tools to track regulatory compliance metrics, providing automated alerts and reports for environmental standards adherence.",
-    tags: ["Monitoring", "Compliance", "Automation", "Reporting"],
-    imageUrl: WordGame,
+      "Collaborated with external teams and third-party reporters to test the XML batch uploading feature, enabling companies to upload leak reports, annual reports, and service records in bulk. Updated XML schema, conducted extensive testing, and provided stakeholder assistance and documentation explaining the new system's capabilities.",
+    tags: ["XML", "Batch Testing", "Schema Updates", "Documentation"],
+    imageUrl: XMLImg,
     url: "#",
   },
 ] as const;

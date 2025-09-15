@@ -27,10 +27,14 @@ export default function CarbPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Full Page Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-green-50 to-blue-200 dark:from-blue-900 dark:via-green-800 dark:to-blue-800 opacity-60"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent dark:via-gray-700/20"></div>
+      
       <CarbHeader activeSection={activeSection} setActiveSection={setActiveSection} />
       
-      <main className="flex flex-col items-center px-4 pt-20">
+      <main className="relative z-10 flex flex-col items-center px-4 pt-20">
         {/* Home Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -39,16 +43,11 @@ export default function CarbPage() {
           className="w-full max-w-6xl"
         >
           {/* Intro Section */}
-          <section id="home" className="relative text-center py-20 overflow-hidden">
-            {/* Gradient Background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-green-50 to-blue-200 dark:from-blue-900 dark:via-green-800 dark:to-blue-800 opacity-60"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent dark:via-gray-700/20"></div>
-            
+          <section id="home" className="relative text-center py-20">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="relative z-10"
             >
               <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">
                 California Air Resources Board
@@ -71,11 +70,14 @@ export default function CarbPage() {
                 About My Role
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-4xl mx-auto">
-                As a STEM Student Intern at the California Air Resources Board, I focused on developing 
-                innovative solutions to automate workflows, enhance data collection processes, and improve 
-                environmental monitoring capabilities. My work involved creating Python automation scripts, 
-                building web-scraping tools, and developing data visualization dashboards that directly 
-                supported CARB&apos;s mission of protecting public health and the environment.
+                As a Student Intern at the California Air Resources Board, I used 
+                my expertise encompassed developing sophisticated Python automation scripts, conducting comprehensive 
+                RMP data analysis spanning over a decade of historical records, and orchestrating strategic 
+                compliance outreach campaigns. Through innovative XML batch testing frameworks and advanced 
+                semiconductor regulation tools, I delivered measurable improvements in operational efficiency 
+                while ensuring unwavering adherence to California's stringent environmental standards. My work 
+                directly contributed to CARB's mission of protecting public health and preserving our environment 
+                through technological solutions and data driven insights.
               </p>
             </motion.div>
           </section>
