@@ -1,23 +1,29 @@
 import React from "react";
+// ---- Icons ----
 import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
-import { TbDatabaseImport } from "react-icons/tb";
+import { FaReact, FaShieldVirus } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
+import { TbDatabaseImport } from "react-icons/tb";
+
+// ---- Images: General ----
 import corpcommentImg from "@/public/corpcomment.png";
-import rmtdevImg from "@/public/rmtdev.png";
-import wordanalyticsImg from "@/public/wordanalytics.png";
-import WordGame from "@/public/ReactWordGame.png";
-import JaredPort from "@/public/JaredPort.png";
 import DimEyeShow from "@/public/Purneet.png";
-import Person1 from "@/public/person1.jpg"
-import Person2 from "@/public/person2.jpg"
-import Person3 from "@/public/person3.jpg"
-import AllHandsImg from "@/public/CARB/All-Hands.png"
-import DataAnalysisImg from "@/public/CARB/Data-Anaylsis .png"
-import SF6Img from "@/public/CARB/SF6.png"
-import SemiImg from "@/public/CARB/Semi.png"
-import OutreachImg from "@/public/CARB/Outreach.png"
-import XMLImg from "@/public/CARB/XML.png"
+import JaredPort from "@/public/JaredPort.png";
+import Person1 from "@/public/person1.jpg";
+import Person2 from "@/public/person2.jpg";
+import Person3 from "@/public/person3.jpg";
+import rmtdevImg from "@/public/rmtdev.png";
+import WordGame from "@/public/ReactWordGame.png";
+import Cyboria from "@/public/cyboria.png";
+
+// ---- Images: CARB Projects ----
+import AllHandsImg from "@/public/CARB/All-Hands.png";
+import DataAnalysisImg from "@/public/CARB/Data-Anaylsis.png";
+import OutreachImg from "@/public/CARB/Outreach.png";
+import SF6Img from "@/public/CARB/SF6.png";
+import SemiImg from "@/public/CARB/Semi.png";
+import XMLImg from "@/public/CARB/XML.png";
+
 
 
 export const links = [
@@ -77,7 +83,7 @@ export const experiencesData = [
     description:
       "I pursued further education in Computer Science at CSUS and am on track to complete my degree by May 2025",
     icon: React.createElement(LuGraduationCap),
-    date: "2023",
+    date: "2023 - 2025",
   },
   {
     title: "Full-Stack Developer",
@@ -93,7 +99,23 @@ export const experiencesData = [
     description:
       "Developed Python scripts to automate tasks and streamline workflows, created web-scraping tools for data collection and analysis, performed data transformations and visualizations in ObservableHQ, and managed XML batch testing.",
     icon: React.createElement(TbDatabaseImport),
-    date: "2024 - present",
+    date: "2024 - 2025",
+  },
+  {
+    title: "Software Engineer",
+    location: "Sacramento, CA",
+    description:
+      "Developed Credential Sentinel, an AI-driven web platform for auditing credential exposure and domain vulnerabilities, automated threat intelligence workflows, integrated with SentinelOne for real-time analysis, and delivered actionable cybersecurity insights.",
+    icon: React.createElement(FaShieldVirus),
+    date: "2025 - present",
+  },
+  {
+    title: "Scientific Data System User Interface Lead",
+    location: "Sacramento, CA",
+    description:
+      "Built a secure web platform for masnaging methane plume event data, developed React interfaces and AWS infrastructure with Okta authentication, designed PostgreSQL data models, and ensured compliance with CARB security standards.",
+    icon: React.createElement(FaReact),
+    date: "2025 - present",
   }
   
 ] as const;
@@ -141,12 +163,12 @@ export const projectsData = [
     url: "https://jared-eastlick-portfolio.vercel.app/",
   },
   {
-    title: "Youtube MP3/MP4 Downloader",
+    title: "Cyboria",
     description:
-      "Video downloader application with a modern graphical user interface (GUI) using Python. With a supporting API",
-    tags: ["Python 3", "GUI", "API", "Downloader"],
-    imageUrl: wordanalyticsImg,
-    url: "https://github.com/Puffy12/Youtube-MP3-MP4-Downloader",
+      "Cyboria is a React and TailwindCSS compliance automation platform powered by AI, built to simplify NIST 800-171 and CMMC Compliance.",
+    tags: ["React", "Vite", "Cyber Security", "Typescript","FramerMotion"],
+    imageUrl: Cyboria,
+    url: "https://cyboria.advran.opalstacked.com/",
   },
 ] as const;
 
