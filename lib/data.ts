@@ -62,44 +62,12 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "American River College ",
+    title: "Scientific Data System User Interface Lead",
     location: "Sacramento, CA",
     description:
-      "I graduated after 3 year of studying getting my Associates Degree in Computer Science",
-    icon: React.createElement(LuGraduationCap),
-    date: "2019 - 2022",
-  },
-  {
-    title: "Front-End Developer",
-    location: "Sacramento, CA",
-    description:
-      "I worked as a front-end developer for 1 year intering at American River Design Hub. I also upskilled to the full stack.",
-    icon: React.createElement(CgWorkAlt),
-    date: "2022",
-  },
-  {
-    title: "Sacramento State",
-    location: "Sacramento, CA",
-    description:
-      "I pursued further education in Computer Science at CSUS and am on track to complete my degree by May 2025",
-    icon: React.createElement(LuGraduationCap),
-    date: "2023 - 2025",
-  },
-  {
-    title: "Full-Stack Developer",
-    location: "Sacrmento, CA",
-    description:
-      "I'm now a full-stack developer working as a freelancer. My main stack includes React, Next.js, TypeScript, Tailwind, Vercel and MongoDB. I'm open to full-time opportunities.",
+      "Built a secure web platform for masnaging methane plume event data, developed React interfaces and AWS infrastructure with Okta authentication, designed PostgreSQL data models, and ensured compliance with CARB security standards.",
     icon: React.createElement(FaReact),
-    date: "2023 - present",
-  },
-  {
-    title: "STEM Student Intern",
-    location: "Sacramento, CA",
-    description:
-      "Developed Python scripts to automate tasks and streamline workflows, created web-scraping tools for data collection and analysis, performed data transformations and visualizations in ObservableHQ, and managed XML batch testing.",
-    icon: React.createElement(TbDatabaseImport),
-    date: "2024 - 2025",
+    date: "2025 - present",
   },
   {
     title: "Software Engineer",
@@ -110,14 +78,45 @@ export const experiencesData = [
     date: "2025 - present",
   },
   {
-    title: "Scientific Data System User Interface Lead",
+    title: "STEM Student Intern",
     location: "Sacramento, CA",
     description:
-      "Built a secure web platform for masnaging methane plume event data, developed React interfaces and AWS infrastructure with Okta authentication, designed PostgreSQL data models, and ensured compliance with CARB security standards.",
+      "Developed Python scripts to automate tasks and streamline workflows, created web-scraping tools for data collection and analysis, performed data transformations and visualizations in ObservableHQ, and managed XML batch testing.",
+    icon: React.createElement(TbDatabaseImport),
+    date: "2024 - 2025",
+  },
+  {
+    title: "Full-Stack Developer",
+    location: "Sacrmento, CA",
+    description:
+      "I'm now a full-stack developer working as a freelancer. My main stack includes React, Next.js, TypeScript, Tailwind, Vercel and MongoDB. I'm open to full-time opportunities.",
     icon: React.createElement(FaReact),
-    date: "2025 - present",
-  }
-  
+    date: "2023 - present",
+  },
+  {
+    title: "Sacramento State",
+    location: "Sacramento, CA",
+    description:
+      "I pursued further education in Computer Science at CSUS and am on track to complete my degree by May 2025",
+    icon: React.createElement(LuGraduationCap),
+    date: "2023 - 2025",
+  },
+  {
+    title: "Front-End Developer",
+    location: "Sacramento, CA",
+    description:
+      "I worked as a front-end developer for 1 year intering at American River Design Hub. I also upskilled to the full stack.",
+    icon: React.createElement(CgWorkAlt),
+    date: "2022",
+  },
+  {
+    title: "American River College ",
+    location: "Sacramento, CA",
+    description:
+      "I graduated after 3 year of studying getting my Associates Degree in Computer Science",
+    icon: React.createElement(LuGraduationCap),
+    date: "2019 - 2022",
+  },  
 ] as const;
 
 export const projectsData = [
