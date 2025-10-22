@@ -120,6 +120,22 @@ export const experiencesData = [
 ] as const;
 
 export const projectsData = [
+    {
+    title: "Jared Eastlick Personal Portfolio",
+    description:
+      "A personal portfolio website built with Next.js and Chakra UI, showcasing the work, experience, hobbies, and contact information of freelance writer Jared Eastlick. ",
+    tags: ["Next.js", "Chakura UI", "Tailwind", "Javascript", "Portfolio"],
+    imageUrl: JaredPort,
+    url: "https://jared-eastlick-portfolio.vercel.app/",
+  },
+  {
+    title: "Cyboria",
+    description:
+      "Cyboria is a React and TailwindCSS compliance automation platform powered by AI, built to simplify NIST 800-171 and CMMC Compliance.",
+    tags: ["React", "Vite", "Cyber Security", "Typescript","FramerMotion"],
+    imageUrl: Cyboria,
+    url: "https://cyboria.advran.opalstacked.com/",
+  },
   {
     title: "Sac State IEEE",
     description:
@@ -152,22 +168,6 @@ export const projectsData = [
     tags: ["Java", "OpenGL", "Object Oriented", "Graphics Engine"],
     imageUrl: rmtdevImg,
     url: "https://github.com/Puffy12/Game-of-Life-Java-",
-  },
-  {
-    title: "Jared Eastlick Personal Portfolio",
-    description:
-      "A personal portfolio website built with Next.js and Chakra UI, showcasing the work, experience, hobbies, and contact information of freelance writer Jared Eastlick. ",
-    tags: ["Next.js", "Chakura UI", "Tailwind", "Javascript", "Portfolio"],
-    imageUrl: JaredPort,
-    url: "https://jared-eastlick-portfolio.vercel.app/",
-  },
-  {
-    title: "Cyboria",
-    description:
-      "Cyboria is a React and TailwindCSS compliance automation platform powered by AI, built to simplify NIST 800-171 and CMMC Compliance.",
-    tags: ["React", "Vite", "Cyber Security", "Typescript","FramerMotion"],
-    imageUrl: Cyboria,
-    url: "https://cyboria.advran.opalstacked.com/",
   },
 ] as const;
 
