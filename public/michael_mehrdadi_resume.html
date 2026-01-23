@@ -9,15 +9,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-primary: #0a0a0a;
-            --bg-secondary: #111111;
-            --bg-card: #1a1a1a;
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #0d0d14;
+            --bg-card: #12121a;
             --text-primary: #ffffff;
             --text-secondary: #a1a1aa;
             --text-muted: #71717a;
-            --border-color: #2e2e2e;
-            --brand-color: #3b82f6;
-            --brand-secondary: #8b5cf6;
+            --border-color: #1e1e2e;
+            
+            /* Apple Liquid Glass Theme Colors */
+            --gradient-start: #1a365d;
+            --gradient-mid: #4a5568;
+            --gradient-end: #2d3748;
+            --accent-light: #cbd5e0;
+            --accent-blue: #718096;
+            --brand-color: #718096;
+            --brand-secondary: #cbd5e0;
+            
             --page-width: 8.5in;
             --page-height: 11in;
         }
@@ -30,7 +38,7 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: #1a1a1a;
+            background-color: #0a0a0f;
             color: var(--text-primary);
             display: flex;
             flex-direction: column;
@@ -43,13 +51,27 @@
         .page {
             width: var(--page-width);
             min-height: var(--page-height);
-            background-color: var(--bg-primary);
+            background: linear-gradient(135deg, var(--bg-primary) 0%, #0d0d18 50%, var(--bg-secondary) 100%);
             padding: 2.5rem;
             position: relative;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
             display: flex;
             flex-direction: column;
             overflow: hidden;
+            border-radius: 8px;
+        }
+
+        /* Subtle gradient overlay for depth - liquid glass effect */
+        .page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 20% 20%, rgba(113, 128, 150, 0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 80%, rgba(26, 54, 93, 0.06) 0%, transparent 40%);
+            pointer-events: none;
         }
 
         @media print {
@@ -72,21 +94,22 @@
                 height: 100vh;
                 page-break-after: always;
                 page-break-inside: avoid;
+                border-radius: 0;
             }
         }
 
         .gradient-text {
-            background: linear-gradient(135deg, var(--brand-color) 0%, var(--brand-secondary) 100%);
+            background: linear-gradient(90deg, #718096 0%, #cbd5e0 50%, #718096 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            display: inline-block;
         }
 
         .gradient-line {
-            background: linear-gradient(90deg, var(--brand-color) 0%, var(--brand-secondary) 100%);
-            height: 3px;
+            background: linear-gradient(90deg, var(--gradient-start), var(--accent-blue), var(--gradient-end));
+            height: 2px;
             width: 100%;
-            border-radius: 2px;
         }
 
         /* Header Section */
@@ -94,6 +117,7 @@
             text-align: center;
             margin-bottom: 1.5rem;
             position: relative;
+            z-index: 1;
         }
 
         .header::before {
@@ -104,7 +128,7 @@
             transform: translateX(-50%);
             width: 200%;
             height: 300px;
-            background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.08) 0%, transparent 60%);
+            background: radial-gradient(ellipse at center, rgba(113, 128, 150, 0.1) 0%, transparent 60%);
             pointer-events: none;
         }
 
@@ -119,7 +143,7 @@
         .title {
             font-size: 1.1rem;
             font-weight: 500;
-            color: var(--brand-color);
+            color: var(--accent-blue);
             letter-spacing: 0.1em;
             text-transform: uppercase;
             margin-bottom: 1rem;
@@ -152,7 +176,7 @@
         }
 
         .contact-item a:hover {
-            color: var(--brand-color);
+            color: var(--accent-light);
         }
 
         /* Main Grid */
@@ -161,6 +185,8 @@
             grid-template-columns: 1fr 0.9fr;
             gap: 2rem;
             flex: 1;
+            position: relative;
+            z-index: 1;
         }
 
         .left-col, .right-col {
@@ -177,7 +203,7 @@
         .section-title {
             font-size: 0.75rem;
             font-weight: 700;
-            color: var(--brand-color);
+            color: var(--accent-blue);
             text-transform: uppercase;
             letter-spacing: 0.15em;
             margin-bottom: 0.75rem;
@@ -215,7 +241,7 @@
 
         .exp-company {
             font-size: 0.8rem;
-            color: var(--brand-color);
+            color: var(--accent-blue);
             margin-bottom: 0.4rem;
         }
 
@@ -234,17 +260,63 @@
         }
 
         .exp-bullets li::before {
-            content: "▸";
+            content: "•";
             position: absolute;
             left: 0;
-            color: var(--brand-color);
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
+
+        /* Client Cards - Liquid Glass Style */
+        .client-card {
+            background: linear-gradient(135deg, rgba(113, 128, 150, 0.12) 0%, rgba(26, 54, 93, 0.18) 100%);
+            border: 1px solid rgba(113, 128, 150, 0.25);
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            margin-bottom: 0.6rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .client-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .client-name {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.2rem;
+        }
+
+        .client-type {
             font-size: 0.65rem;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.3rem;
+        }
+
+        .client-desc {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+            margin-bottom: 0.3rem;
+        }
+
+        .client-link {
+            font-size: 0.65rem;
+            color: var(--accent-light);
+            text-decoration: none;
+        }
+
+        .client-link:hover {
+            color: #ffffff;
         }
 
         /* Project Cards */
         .project-card {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(139, 92, 246, 0.05) 100%);
-            border: 1px solid rgba(59, 130, 246, 0.2);
+            background: linear-gradient(135deg, rgba(113, 128, 150, 0.08) 0%, rgba(26, 54, 93, 0.1) 100%);
+            border: 1px solid rgba(113, 128, 150, 0.15);
             border-radius: 0.5rem;
             padding: 0.75rem;
             margin-bottom: 0.6rem;
@@ -270,7 +342,7 @@
 
         .project-link {
             font-size: 0.65rem;
-            color: var(--brand-color);
+            color: var(--accent-light);
             text-decoration: none;
         }
 
@@ -299,15 +371,15 @@
         }
 
         .skill-tag {
-            background: rgba(59, 130, 246, 0.15);
-            border: 1px solid rgba(59, 130, 246, 0.25);
+            background: linear-gradient(135deg, rgba(113, 128, 150, 0.15) 0%, rgba(26, 54, 93, 0.2) 100%);
+            border: 1px solid rgba(113, 128, 150, 0.25);
             padding: 0.15rem 0.4rem;
             border-radius: 0.25rem;
             font-size: 0.6rem;
             color: var(--text-secondary);
         }
 
-        /* Stats Row */
+        /* Stats Row - Liquid Glass */
         .stats-row {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -316,8 +388,8 @@
         }
 
         .stat-box {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(139, 92, 246, 0.08) 100%);
-            border: 1px solid rgba(59, 130, 246, 0.25);
+            background: linear-gradient(135deg, rgba(113, 128, 150, 0.12) 0%, rgba(26, 54, 93, 0.18) 100%);
+            border: 1px solid rgba(113, 128, 150, 0.25);
             border-radius: 0.4rem;
             padding: 0.5rem;
             text-align: center;
@@ -326,7 +398,7 @@
         .stat-value {
             font-size: 1.1rem;
             font-weight: 700;
-            background: linear-gradient(135deg, var(--brand-color) 0%, var(--brand-secondary) 100%);
+            background: linear-gradient(90deg, #718096 0%, #cbd5e0 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -352,7 +424,7 @@
 
         .edu-school {
             font-size: 0.75rem;
-            color: var(--brand-color);
+            color: var(--accent-blue);
         }
 
         .edu-date {
@@ -360,42 +432,47 @@
             color: var(--text-muted);
         }
 
-        /* Portfolio Section */
-        .portfolio-grid {
+        /* Notable Clients Grid - Featured */
+        .clients-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 0.5rem;
         }
 
-        .portfolio-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
+        .client-item {
+            background: linear-gradient(135deg, rgba(113, 128, 150, 0.15) 0%, rgba(26, 54, 93, 0.2) 100%);
+            border: 1px solid rgba(113, 128, 150, 0.3);
             border-radius: 0.4rem;
-            padding: 0.5rem;
+            padding: 0.6rem;
             text-align: center;
-            transition: border-color 0.2s;
+            transition: all 0.2s ease;
         }
 
-        .portfolio-item:hover {
-            border-color: var(--brand-color);
+        .client-item:hover {
+            border-color: var(--accent-light);
+            transform: translateY(-1px);
         }
 
-        .portfolio-name {
-            font-size: 0.65rem;
+        .client-item-name {
+            font-size: 0.7rem;
             font-weight: 600;
             color: var(--text-primary);
             margin-bottom: 0.15rem;
         }
 
-        .portfolio-type {
+        .client-item-type {
             font-size: 0.55rem;
-            color: var(--text-muted);
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
         }
 
         /* Footer */
         footer {
             margin-top: auto;
             padding-top: 0.75rem;
+            position: relative;
+            z-index: 1;
         }
 
         .footer-content {
@@ -407,11 +484,11 @@
             padding-top: 0.5rem;
         }
 
-        /* Highlight Box */
+        /* Highlight Box - Liquid Glass */
         .highlight-box {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            border-left: 3px solid var(--brand-color);
+            background: linear-gradient(135deg, rgba(113, 128, 150, 0.1) 0%, rgba(26, 54, 93, 0.15) 100%);
+            border: 1px solid rgba(113, 128, 150, 0.25);
+            border-left: 3px solid var(--accent-blue);
             padding: 0.75rem;
             border-radius: 0.4rem;
             margin-bottom: 0.75rem;
@@ -422,6 +499,30 @@
             color: var(--text-secondary);
             line-height: 1.5;
             margin: 0;
+        }
+
+        /* Domain Links */
+        .domain-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+        }
+
+        .domain-links a {
+            background: linear-gradient(135deg, rgba(113, 128, 150, 0.15) 0%, rgba(26, 54, 93, 0.2) 100%);
+            border: 1px solid rgba(113, 128, 150, 0.25);
+            padding: 0.15rem 0.4rem;
+            border-radius: 0.25rem;
+            font-size: 0.55rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .domain-links a:hover {
+            border-color: var(--accent-light);
+            color: var(--accent-light);
         }
     </style>
 </head>
@@ -525,24 +626,48 @@
                     </div>
                 </div>
 
-                <!-- Featured Projects -->
+                <!-- Notable Clients (formerly Featured Projects) -->
                 <div class="section">
-                    <h2 class="section-title">Featured Projects</h2>
+                    <h2 class="section-title">Notable Clients</h2>
                     
-                    <div class="project-card">
-                        <div class="project-name">HCAI GIS Web App (Senior Project)</div>
-                        <div class="project-desc">
-                            Full-stack GIS platform for California's HCAI. Built HPSA search with Azure Maps, shapefile/CSV uploads, Redis caching & PostGIS spatial rendering. Deployed with Docker.
-                        </div>
-                        <a href="https://geo.hcai.ca.gov/hpsa-search" class="project-link" target="_blank">geo.hcai.ca.gov/hpsa-search</a>
+                    <div class="highlight-box" style="margin-bottom: 0.5rem;">
+                        <p>Full-stack development, deployment & ongoing maintenance for production web applications across multiple industries.</p>
                     </div>
 
-                    <div class="project-card">
-                        <div class="project-name">IEEE CSUS Club Website</div>
-                        <div class="project-desc">
-                            Led front-end development for IEEE CSUS with dynamic content sections and interactive event calendar. 50+ active student users.
+                    <div class="clients-grid" style="margin-bottom: 0.5rem;">
+                        <div class="client-item">
+                            <div class="client-item-name">JEANS.com</div>
+                            <div class="client-item-type">E-Commerce Platform</div>
                         </div>
-                        <a href="https://ieee-web-app.vercel.app" class="project-link" target="_blank">ieee-web-app.vercel.app</a>
+                        <div class="client-item">
+                            <div class="client-item-name">Cyboria</div>
+                            <div class="client-item-type">NIST 800-171 Compliance</div>
+                        </div>
+                        <div class="client-item">
+                            <div class="client-item-name">HB Facade</div>
+                            <div class="client-item-type">Consulting Services</div>
+                        </div>
+                        <div class="client-item">
+                            <div class="client-item-name">ProCompact Estates</div>
+                            <div class="client-item-type">Real Estate</div>
+                        </div>
+                        <div class="client-item">
+                            <div class="client-item-name">SoCal Sweeping</div>
+                            <div class="client-item-type">Commercial Services</div>
+                        </div>
+                        <div class="client-item">
+                            <div class="client-item-name">TinyHomeCompany</div>
+                            <div class="client-item-type">Home Builder</div>
+                        </div>
+                    </div>
+
+                    <div class="domain-links">
+                        <a href="https://jeans.advran.opalstacked.com" target="_blank">jeans.advran.opalstacked.com</a>
+                        <a href="https://cyboria.advran.opalstacked.com" target="_blank">cyboria.advran.opalstacked.com</a>
+                        <a href="https://hbfacade.com" target="_blank">hbfacade.com</a>
+                        <a href="https://procompactestates.com" target="_blank">procompactestates.com</a>
+                        <a href="https://socalsweeping.advran.opalstacked.com" target="_blank">socalsweeping.advran.opalstacked.com</a>
+                        <a href="https://thattinyhomecompany.com" target="_blank">thattinyhomecompany.com</a>
                     </div>
                 </div>
 
@@ -634,48 +759,24 @@
                     </div>
                 </div>
 
-                <!-- Production Websites -->
+                <!-- Featured Projects (moved from left column) -->
                 <div class="section">
-                    <h2 class="section-title">Production Websites Built & Managed</h2>
+                    <h2 class="section-title">Featured Projects</h2>
                     
-                    <div class="highlight-box" style="margin-bottom: 0.5rem;">
-                        <p>Full-stack development, deployment & ongoing maintenance for production web applications across multiple industries.</p>
+                    <div class="project-card">
+                        <div class="project-name">HCAI GIS Web App (Senior Project)</div>
+                        <div class="project-desc">
+                            Full-stack GIS platform for California's HCAI. Built HPSA search with Azure Maps, shapefile/CSV uploads, Redis caching & PostGIS spatial rendering. Deployed with Docker.
+                        </div>
+                        <a href="https://geo.hcai.ca.gov/hpsa-search" class="project-link" target="_blank">geo.hcai.ca.gov/hpsa-search</a>
                     </div>
 
-                    <div class="portfolio-grid" style="margin-bottom: 0.5rem;">
-                        <div class="portfolio-item">
-                            <div class="portfolio-name">JEANS.com</div>
-                            <div class="portfolio-type">E-Commerce</div>
+                    <div class="project-card">
+                        <div class="project-name">IEEE CSUS Club Website</div>
+                        <div class="project-desc">
+                            Led front-end development for IEEE CSUS with dynamic content sections and interactive event calendar. 50+ active student users.
                         </div>
-                        <div class="portfolio-item">
-                            <div class="portfolio-name">Cyboria</div>
-                            <div class="portfolio-type">NIST 800-171</div>
-                        </div>
-                        <div class="portfolio-item">
-                            <div class="portfolio-name">HB Facade</div>
-                            <div class="portfolio-type">Consulting</div>
-                        </div>
-                        <div class="portfolio-item">
-                            <div class="portfolio-name">ProCompact Estates</div>
-                            <div class="portfolio-type">Real Estate</div>
-                        </div>
-                        <div class="portfolio-item">
-                            <div class="portfolio-name">SoCal Sweeping</div>
-                            <div class="portfolio-type">Services</div>
-                        </div>
-                        <div class="portfolio-item">
-                            <div class="portfolio-name">TinyHomeCompany</div>
-                            <div class="portfolio-type">Home Builder</div>
-                        </div>
-                    </div>
-
-                    <div class="domain-links" style="display: flex; flex-wrap: wrap; gap: 0.3rem;">
-                        <a href="https://jeans.advran.opalstacked.com" target="_blank" class="skill-tag" style="text-decoration: none; cursor: pointer; font-size: 0.55rem;">jeans.advran.opalstacked.com</a>
-                        <a href="https://cyboria.advran.opalstacked.com" target="_blank" class="skill-tag" style="text-decoration: none; cursor: pointer; font-size: 0.55rem;">cyboria.advran.opalstacked.com</a>
-                        <a href="https://hbfacade.com" target="_blank" class="skill-tag" style="text-decoration: none; cursor: pointer; font-size: 0.55rem;">hbfacade.com</a>
-                        <a href="https://procompactestates.com" target="_blank" class="skill-tag" style="text-decoration: none; cursor: pointer; font-size: 0.55rem;">procompactestates.com</a>
-                        <a href="https://socalsweeping.advran.opalstacked.com" target="_blank" class="skill-tag" style="text-decoration: none; cursor: pointer; font-size: 0.55rem;">socalsweeping.advran.opalstacked.com</a>
-                        <a href="https://thattinyhomecompany.com" target="_blank" class="skill-tag" style="text-decoration: none; cursor: pointer; font-size: 0.55rem;">thattinyhomecompany.com</a>
+                        <a href="https://ieee-web-app.vercel.app" class="project-link" target="_blank">ieee-web-app.vercel.app</a>
                     </div>
                 </div>
 
