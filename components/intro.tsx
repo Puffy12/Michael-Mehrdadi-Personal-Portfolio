@@ -6,8 +6,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
-import { HiDownload } from "react-icons/hi";
+import { HiDownload, HiExternalLink } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
+import { HiDocumentText } from "react-icons/hi2";
+import { SiLeaflet } from "react-icons/si";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 
@@ -114,6 +116,34 @@ export default function Intro() {
         >
           <FaGithubSquare />
         </a>
+      </motion.div>
+
+      {/* Additional Links Row */}
+      <motion.div
+        className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 mt-3"
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.2,
+        }}
+      >
+        <Link
+          href="/resume"
+          className="group bg-white px-6 py-2.5 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 text-gray-700 hover:text-gray-950 dark:text-white/60 dark:hover:text-white"
+        >
+          <HiDocumentText className="w-4 h-4 opacity-70" />
+          View CV
+          <HiExternalLink className="w-3.5 h-3.5 opacity-60 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition" />
+        </Link>
+
+        <Link
+          href="/carb"
+          className="group bg-white px-6 py-2.5 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 text-gray-700 hover:text-gray-950 dark:text-white/60 dark:hover:text-white"
+        >
+          <SiLeaflet className="w-4 h-4 opacity-70" />
+          CARB Experience
+          <HiExternalLink className="w-3.5 h-3.5 opacity-60 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition" />
+        </Link>
       </motion.div>
     </section>
   );
