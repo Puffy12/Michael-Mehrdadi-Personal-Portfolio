@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 
 export default function BodyWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const isSpecialPage = pathname === "/resume" || pathname === "/carb";
+  const isSpecialPage = pathname === "/resume";
 
   if (isSpecialPage) {
     return <>{children}</>;

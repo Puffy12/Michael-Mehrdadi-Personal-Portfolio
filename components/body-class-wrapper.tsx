@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 export default function BodyClassWrapper() {
   const pathname = usePathname();
-  const isSpecialPage = pathname === "/resume" || pathname === "/carb";
+  const isSpecialPage = pathname === "/resume";
 
   useEffect(() => {
     if (isSpecialPage) {

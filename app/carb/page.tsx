@@ -78,26 +78,22 @@ export default function CarbPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-950">
-      {/* Subtle gradient background */}
-      <div className="fixed inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950" />
-      <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-900/20 via-transparent to-transparent" />
-      
+    <div className="min-h-screen">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/50">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-b border-gray-200 dark:border-gray-800">
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Link 
               href="/"
-              className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group"
+              className="flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors group"
             >
               <FaArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
               <span className="text-sm font-medium">Back to Portfolio</span>
             </Link>
             
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500 to-teal-500 p-0.5">
-                <div className="w-full h-full rounded-full bg-slate-950 flex items-center justify-center overflow-hidden">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-500 to-teal-500 p-0.5">
+                <div className="w-full h-full rounded-full bg-white dark:bg-gray-900 flex items-center justify-center overflow-hidden">
                   <Image
                     src="/carb-pogo-2.png"
                     alt="CARB Logo"
@@ -107,14 +103,14 @@ export default function CarbPage() {
                   />
                 </div>
               </div>
-              <span className="text-white font-semibold hidden sm:block">CARB</span>
+              <span className="text-gray-900 dark:text-white font-semibold hidden sm:block">CARB</span>
             </div>
           </div>
         </div>
       </nav>
 
       {/* Main Content */}
-      <main className="relative z-10 pt-24 pb-20">
+      <main className="relative z-10 pt-8 pb-20">
         <div className="max-w-6xl mx-auto px-6">
           
           {/* Hero Section */}
@@ -129,7 +125,7 @@ export default function CarbPage() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.1 }}
-              className="inline-flex items-center gap-3 bg-slate-900/50 border border-slate-800 rounded-full px-4 py-2 mb-8"
+              className="inline-flex items-center gap-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full px-4 py-2 mb-8 shadow-sm"
             >
               <div className="w-8 h-8 rounded-full overflow-hidden bg-white flex items-center justify-center">
                 <Image
@@ -140,7 +136,7 @@ export default function CarbPage() {
                   className="object-contain"
                 />
               </div>
-              <span className="text-slate-300 font-medium">California Air Resources Board</span>
+              <span className="text-gray-700 dark:text-gray-300 font-medium">California Air Resources Board</span>
             </motion.div>
 
             {/* Title */}
@@ -148,11 +144,11 @@ export default function CarbPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight"
             >
               Scientific Data System
               <br />
-              <span className="bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">
                 User Interface Lead
               </span>
             </motion.h1>
@@ -162,18 +158,18 @@ export default function CarbPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="flex flex-wrap gap-4 text-slate-400 mb-8"
+              className="flex flex-wrap gap-4 text-gray-600 dark:text-gray-400 mb-8"
             >
               <div className="flex items-center gap-2">
-                <FaBriefcase className="w-4 h-4 text-cyan-500" />
+                <FaBriefcase className="w-4 h-4 text-green-600" />
                 <span>Full-time</span>
               </div>
               <div className="flex items-center gap-2">
-                <FaClock className="w-4 h-4 text-cyan-500" />
+                <FaClock className="w-4 h-4 text-green-600" />
                 <span>Sep 2025 – Present · 5 mos</span>
               </div>
               <div className="flex items-center gap-2">
-                <FaMapMarkerAlt className="w-4 h-4 text-cyan-500" />
+                <FaMapMarkerAlt className="w-4 h-4 text-green-600" />
                 <span>Sacramento, CA · Hybrid</span>
               </div>
             </motion.div>
@@ -185,11 +181,11 @@ export default function CarbPage() {
               transition={{ delay: 0.4 }}
               className="inline-flex flex-wrap items-center gap-3"
             >
-              <div className="flex items-center gap-2 bg-gradient-to-r from-cyan-500/10 to-teal-500/10 border border-cyan-500/20 rounded-lg px-4 py-2">
-                <span className="text-cyan-400 font-semibold">1 yr 4 mos</span>
-                <span className="text-slate-500">total tenure at CARB</span>
+              <div className="flex items-center gap-2 bg-gradient-to-r from-green-500/10 to-teal-500/10 border border-green-500/20 rounded-lg px-4 py-2">
+                <span className="text-green-600 dark:text-green-400 font-semibold">1 yr 4 mos</span>
+                <span className="text-gray-500">total tenure at CARB</span>
               </div>
-              <div className="flex items-center gap-2 text-slate-500 text-sm">
+              <div className="flex items-center gap-2 text-gray-500 text-sm">
                 <span>Intern → UI Lead</span>
               </div>
             </motion.div>
@@ -202,9 +198,9 @@ export default function CarbPage() {
             transition={{ delay: 0.5 }}
             className="mb-20"
           >
-            <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 lg:p-10">
-              <h2 className="text-2xl font-bold text-white mb-6">Overview</h2>
-              <p className="text-lg text-slate-300 leading-relaxed">
+            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 lg:p-10 shadow-sm">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Overview</h2>
+              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                 Leading full-stack development of a secure, web-based platform that collects and manages 
                 stakeholder responses to satellite-detected methane plume events across California. 
                 Building modern React interfaces with cloud-native AWS infrastructure, implementing 
@@ -221,7 +217,7 @@ export default function CarbPage() {
             transition={{ delay: 0.6 }}
             className="mb-20"
           >
-            <h2 className="text-2xl font-bold text-white mb-8">Key Responsibilities</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Key Responsibilities</h2>
             <div className="grid md:grid-cols-2 gap-4">
               {responsibilities.map((item, index) => (
                 <motion.div
@@ -229,17 +225,17 @@ export default function CarbPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.7 + index * 0.05 }}
-                  className="group bg-slate-900/30 hover:bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 rounded-xl p-6 transition-all duration-300"
+                  className="group bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-750 border border-gray-200 dark:border-gray-700 hover:border-green-500/30 rounded-xl p-6 transition-all duration-300 shadow-sm"
                 >
                   <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-teal-500/20 flex items-center justify-center group-hover:from-cyan-500/30 group-hover:to-teal-500/30 transition-colors">
-                      <item.icon className="w-6 h-6 text-cyan-400" />
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-green-500/20 to-teal-500/20 flex items-center justify-center group-hover:from-green-500/30 group-hover:to-teal-500/30 transition-colors">
+                      <item.icon className="w-6 h-6 text-green-600 dark:text-green-400" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
                         {item.title}
                       </h3>
-                      <p className="text-slate-400 text-sm leading-relaxed">
+                      <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
                         {item.description}
                       </p>
                     </div>
@@ -256,30 +252,30 @@ export default function CarbPage() {
             transition={{ delay: 0.9 }}
             className="mb-20"
           >
-            <h2 className="text-2xl font-bold text-white mb-8">Technology Stack</h2>
-            <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-8">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Technology Stack</h2>
+            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 shadow-sm">
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
                 {[
-                  { icon: FaReact, name: "React", color: "text-cyan-400" },
-                  { icon: SiPostgresql, name: "PostgreSQL", color: "text-blue-400" },
-                  { icon: FaAws, name: "AWS", color: "text-orange-400" },
-                  { icon: SiOkta, name: "Okta", color: "text-indigo-400" },
-                  { icon: SiTerraform, name: "Terraform", color: "text-purple-400" },
-                  { icon: FaDocker, name: "Docker", color: "text-blue-500" },
-                  { icon: FaCode, name: "TypeScript", color: "text-blue-400" },
-                  { icon: FaShieldAlt, name: "Security", color: "text-green-400" },
-                  { icon: FaDatabase, name: "CI/CD", color: "text-rose-400" },
-                  { icon: FaChartLine, name: "Analytics", color: "text-teal-400" },
+                  { icon: FaReact, name: "React", color: "text-cyan-500" },
+                  { icon: SiPostgresql, name: "PostgreSQL", color: "text-blue-500" },
+                  { icon: FaAws, name: "AWS", color: "text-orange-500" },
+                  { icon: SiOkta, name: "Okta", color: "text-indigo-500" },
+                  { icon: SiTerraform, name: "Terraform", color: "text-purple-500" },
+                  { icon: FaDocker, name: "Docker", color: "text-blue-600" },
+                  { icon: FaCode, name: "TypeScript", color: "text-blue-500" },
+                  { icon: FaShieldAlt, name: "Security", color: "text-green-500" },
+                  { icon: FaDatabase, name: "CI/CD", color: "text-rose-500" },
+                  { icon: FaChartLine, name: "Analytics", color: "text-teal-500" },
                 ].map((tech, index) => (
                   <motion.div
                     key={tech.name}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 1 + index * 0.05 }}
-                    className="flex flex-col items-center gap-3 p-4 rounded-xl hover:bg-slate-800/50 transition-colors cursor-default"
+                    className="flex flex-col items-center gap-3 p-4 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors cursor-default"
                   >
                     <tech.icon className={`w-8 h-8 ${tech.color}`} />
-                    <span className="text-slate-300 text-sm font-medium">{tech.name}</span>
+                    <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">{tech.name}</span>
                   </motion.div>
                 ))}
               </div>
@@ -293,7 +289,7 @@ export default function CarbPage() {
             transition={{ delay: 1.1 }}
             className="mb-20"
           >
-            <h2 className="text-2xl font-bold text-white mb-8">Skills</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Skills</h2>
             <div className="flex flex-wrap gap-3">
               {skills.map((skill, index) => (
                 <motion.span
@@ -301,7 +297,7 @@ export default function CarbPage() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 1.2 + index * 0.03 }}
-                  className="px-4 py-2 bg-slate-900/50 border border-slate-800 hover:border-cyan-500/50 rounded-full text-slate-300 hover:text-cyan-400 text-sm font-medium transition-all duration-300 cursor-default"
+                  className="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-green-500/50 rounded-full text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 text-sm font-medium transition-all duration-300 cursor-default shadow-sm"
                 >
                   {skill}
                 </motion.span>
@@ -316,17 +312,17 @@ export default function CarbPage() {
             transition={{ delay: 1.3 }}
             className="mb-20"
           >
-            <h2 className="text-2xl font-bold text-white mb-8">Previous Role</h2>
-            <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 lg:p-10">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Previous Role</h2>
+            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 lg:p-10 shadow-sm">
               {/* Role Header */}
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 pb-6 border-b border-slate-800">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 pb-6 border-b border-gray-200 dark:border-gray-700">
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-2">Student Research Assistant</h3>
-                  <p className="text-slate-400">Internship</p>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Student Research Assistant</h3>
+                  <p className="text-gray-600 dark:text-gray-400">Internship</p>
                 </div>
-                <div className="flex flex-wrap gap-3 text-sm text-slate-400">
+                <div className="flex flex-wrap gap-3 text-sm text-gray-600 dark:text-gray-400">
                   <span className="flex items-center gap-2">
-                    <FaClock className="w-4 h-4 text-cyan-500" />
+                    <FaClock className="w-4 h-4 text-green-600" />
                     Oct 2024 – Sep 2025 · 1 yr
                   </span>
                 </div>
@@ -345,21 +341,21 @@ export default function CarbPage() {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 1.4 + index * 0.1 }}
-                    className="flex gap-3 text-slate-300"
+                    className="flex gap-3 text-gray-700 dark:text-gray-300"
                   >
-                    <span className="text-cyan-400 mt-1.5">•</span>
+                    <span className="text-green-600 dark:text-green-400 mt-1.5">•</span>
                     <span>{item}</span>
                   </motion.li>
                 ))}
               </ul>
 
               {/* Internship Skills */}
-              <div className="mt-6 pt-6 border-t border-slate-800">
+              <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
                 <div className="flex flex-wrap gap-2">
                   {["Python", "Web Scraping", "ArcGIS", "Data Visualization", "XML", "Automation", "Data Processing"].map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1 bg-slate-800/50 border border-slate-700 rounded-full text-slate-400 text-xs font-medium"
+                      className="px-3 py-1 bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-full text-gray-600 dark:text-gray-400 text-xs font-medium"
                     >
                       {skill}
                     </span>
@@ -375,16 +371,16 @@ export default function CarbPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.5 }}
           >
-            <div className="bg-gradient-to-br from-cyan-500/10 to-teal-500/10 border border-cyan-500/20 rounded-2xl p-8 lg:p-10">
-              <h2 className="text-2xl font-bold text-white mb-6">Impact</h2>
-              <p className="text-lg text-slate-300 leading-relaxed mb-6">
+            <div className="bg-gradient-to-br from-green-500/10 to-teal-500/10 border border-green-500/20 rounded-2xl p-8 lg:p-10">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Impact</h2>
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
                 Contributing to California&apos;s climate action goals by building technology that enables 
                 rapid response to methane emissions detected by satellite imagery. The platform facilitates 
                 coordination between CARB, facility operators, and partner agencies to ensure swift 
                 compliance and emission reduction across the state.
               </p>
-              <div className="flex items-center gap-3 text-cyan-400">
-                <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+              <div className="flex items-center gap-3 text-green-600 dark:text-green-400">
+                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                 <span className="font-medium">Actively developing and deploying new features</span>
               </div>
             </div>
@@ -394,15 +390,15 @@ export default function CarbPage() {
       </main>
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-slate-800">
+      <footer className="relative z-10 border-t border-gray-200 dark:border-gray-800">
         <div className="max-w-6xl mx-auto px-6 py-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-slate-500 text-sm">
+            <p className="text-gray-500 text-sm">
               California Air Resources Board · Sacramento, CA
             </p>
             <Link 
               href="/"
-              className="text-cyan-400 hover:text-cyan-300 text-sm font-medium transition-colors"
+              className="text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 text-sm font-medium transition-colors"
             >
               View Full Portfolio →
             </Link>

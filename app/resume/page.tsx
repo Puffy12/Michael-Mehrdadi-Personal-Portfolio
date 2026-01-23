@@ -22,9 +22,19 @@ export default function ResumePage() {
   const styleMatch = headContent.match(/<style[^>]*>([\s\S]*)<\/style>/i);
   const styles = styleMatch ? styleMatch[1] : '';
 
-  // Return the HTML content with styles, wrapped in a div that removes default body styling
+  // Return the HTML content with styles, with dark background to match resume
   return (
-    <div style={{ margin: 0, padding: 0, minHeight: '100vh' }}>
+    <div 
+      className="fixed inset-0 overflow-auto flex justify-center"
+      style={{ 
+        margin: 0, 
+        paddingTop: '9rem',
+        paddingBottom: '2rem',
+        minHeight: '100vh',
+        backgroundColor: '#1a1a1a',
+        marginTop: '-7rem'
+      }}
+    >
       <style dangerouslySetInnerHTML={{ __html: styles }} />
       <div dangerouslySetInnerHTML={{ __html: bodyContent }} />
     </div>
