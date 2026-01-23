@@ -8,15 +8,15 @@ import { Toaster } from "react-hot-toast";
 
 export default function LayoutWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const isResumePage = pathname === "/resume";
+  const isSpecialPage = pathname === "/resume" || pathname === "/carb";
 
   return (
     <>
-      {!isResumePage && <ConditionalHeader />}
+      {!isSpecialPage && <ConditionalHeader />}
       {children}
-      {!isResumePage && <Footer />}
-      {!isResumePage && <Toaster position="top-right" />}
-      {!isResumePage && <ThemeSwitch />}
+      {!isSpecialPage && <Footer />}
+      {!isSpecialPage && <Toaster position="top-right" />}
+      {!isSpecialPage && <ThemeSwitch />}
     </>
   );
 }
