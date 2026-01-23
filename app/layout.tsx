@@ -1,20 +1,16 @@
-import Header from "@/components/header";
 import "./globals.css";
 import React from "react";
 import { Inter } from "next/font/google";
 import ActiveSectionContextProvider from "@/context/active-section-context";
-import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
-import { Toaster } from "react-hot-toast";
-import Footer from "@/components/footer";
-import ConditionalHeader from "@/components/conditional-header";
+import LayoutWrapper from "@/components/layout-wrapper";
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: ' Michael Mehrdadi | Personal Portfolio',
-  description: 'Michael is a full stack developer with 2 years of experience',
+  description: 'Michael is a full stack developer with 6 years of experience',
 }
 
 export default function RootLayout({
@@ -32,12 +28,9 @@ export default function RootLayout({
 
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
-            <ConditionalHeader />
-            {children}
-            <Footer />
-
-            <Toaster position="top-right" />
-            <ThemeSwitch />
+            <LayoutWrapper>
+              {children}
+            </LayoutWrapper>
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
       </body>

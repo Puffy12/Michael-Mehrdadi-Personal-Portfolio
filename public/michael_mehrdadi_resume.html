@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Mehrdadi - Full Stack Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-card: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
+            --border-color: #2e2e2e;
+            --brand-color: #3b82f6;
+            --brand-secondary: #8b5cf6;
+            --page-width: 8.5in;
+            --page-height: 11in;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #1a1a1a;
+            color: var(--text-primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .page {
+            width: var(--page-width);
+            min-height: var(--page-height);
+            background-color: var(--bg-primary);
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        @media print {
+            @page {
+                size: 8.5in 11in portrait;
+                margin: 0;
+            }
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            body {
+                padding: 0;
+                background-color: var(--bg-primary) !important;
+            }
+            .page {
+                box-shadow: none;
+                width: 100vw;
+                height: 100vh;
+                page-break-after: always;
+                page-break-inside: avoid;
+            }
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--brand-color) 0%, var(--brand-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-line {
+            background: linear-gradient(90deg, var(--brand-color) 0%, var(--brand-secondary) 100%);
+            height: 3px;
+            width: 100%;
+            border-radius: 2px;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200%;
+            height: 300px;
+            background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .name {
+            font-size: 2.75rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--brand-color);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .contact-row {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-item svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .contact-item a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-item a:hover {
+            color: var(--brand-color);
+        }
+
+        /* Main Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 0.9fr;
+            gap: 2rem;
+            flex: 1;
+        }
+
+        .left-col, .right-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--brand-color);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Experience Items */
+        .exp-item {
+            margin-bottom: 1rem;
+        }
+
+        .exp-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.3rem;
+        }
+
+        .exp-role {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .exp-date {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        .exp-company {
+            font-size: 0.8rem;
+            color: var(--brand-color);
+            margin-bottom: 0.4rem;
+        }
+
+        .exp-bullets {
+            list-style: none;
+            padding: 0;
+        }
+
+        .exp-bullets li {
+            position: relative;
+            padding-left: 1rem;
+            font-size: 0.75rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+            margin-bottom: 0.25rem;
+        }
+
+        .exp-bullets li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--brand-color);
+            font-size: 0.65rem;
+        }
+
+        /* Project Cards */
+        .project-card {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(139, 92, 246, 0.05) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .project-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-name {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.2rem;
+        }
+
+        .project-desc {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+            margin-bottom: 0.3rem;
+        }
+
+        .project-link {
+            font-size: 0.65rem;
+            color: var(--brand-color);
+            text-decoration: none;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+        }
+
+        .skill-category {
+            margin-bottom: 0.6rem;
+        }
+
+        .skill-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+        }
+
+        .skill-tag {
+            background: rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            padding: 0.15rem 0.4rem;
+            border-radius: 0.25rem;
+            font-size: 0.6rem;
+            color: var(--text-secondary);
+        }
+
+        /* Stats Row */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+            margin: 0.75rem 0;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(139, 92, 246, 0.08) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            border-radius: 0.4rem;
+            padding: 0.5rem;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--brand-color) 0%, var(--brand-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.55rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Education */
+        .edu-item {
+            margin-bottom: 0.6rem;
+        }
+
+        .edu-degree {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .edu-school {
+            font-size: 0.75rem;
+            color: var(--brand-color);
+        }
+
+        .edu-date {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+        }
+
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+        }
+
+        .portfolio-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 0.4rem;
+            padding: 0.5rem;
+            text-align: center;
+            transition: border-color 0.2s;
+        }
+
+        .portfolio-item:hover {
+            border-color: var(--brand-color);
+        }
+
+        .portfolio-name {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.15rem;
+        }
+
+        .portfolio-type {
+            font-size: 0.55rem;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            padding-top: 0.75rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            padding-top: 0.5rem;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-left: 3px solid var(--brand-color);
+            padding: 0.75rem;
+            border-radius: 0.4rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .highlight-box p {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PAGE 1 -->
+    <div class="page">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="name"><span class="gradient-text">Michael Mehrdadi</span></h1>
+            <p class="title">Full Stack Software Engineer</p>
+            <div class="contact-row">
+                <span class="contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    Sacramento, CA
+                </span>
+                <span class="contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    (916) 835-2324
+                </span>
+                <span class="contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <a href="mailto:michaelmehrdadi123@gmail.com">michaelmehrdadi123@gmail.com</a>
+                </span>
+                <span class="contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    <a href="https://github.com/Puffy12" target="_blank">GitHub</a>
+                </span>
+                <span class="contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    <a href="https://michael-mehrdadi-personal-portfolio.vercel.app" target="_blank">Portfolio</a>
+                </span>
+            </div>
+        </div>
+
+        <div class="gradient-line" style="margin-bottom: 1.25rem;"></div>
+
+        <!-- Stats Row -->
+        <div class="stats-row">
+            <div class="stat-box">
+                <div class="stat-value">6+</div>
+                <div class="stat-label">Live Websites</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">UI Lead</div>
+                <div class="stat-label">CA State Agency</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">Full Stack</div>
+                <div class="stat-label">React • Express.js • AWS</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">B.S.</div>
+                <div class="stat-label">Computer Science</div>
+            </div>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="main-grid">
+            <!-- Left Column -->
+            <div class="left-col">
+                <!-- Experience -->
+                <div class="section">
+                    <h2 class="section-title">Professional Experience</h2>
+                    
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <span class="exp-role">Scientific Data System UI Lead</span>
+                            <span class="exp-date">Sep 2025 – Present</span>
+                        </div>
+                        <div class="exp-company">California Air Resources Board | Sacramento, CA</div>
+                        <ul class="exp-bullets">
+                            <li>Lead full-stack development of secure platform for satellite-detected methane plume response management</li>
+                            <li>Architect React interfaces with Okta IAM, AWS infrastructure, CI/CD, Terraform & Docker</li>
+                            <li>Design PostgreSQL data models for real-time ingestion, reporting & cross-agency collaboration</li>
+                        </ul>
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <span class="exp-role">Software Engineer</span>
+                            <span class="exp-date">Jun 2025 – Present</span>
+                        </div>
+                        <div class="exp-company">AdVran Inc. | Sacramento, CA</div>
+                        <ul class="exp-bullets">
+                            <li>Built Credential Sentinel – web platform for credential exposure auditing & domain vulnerability analysis</li>
+                            <li>Integrated AI with SentinelOne to automate threat triage & generate detection insights</li>
+                        </ul>
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <span class="exp-role">STEM Student Intern</span>
+                            <span class="exp-date">Oct 2024 – Aug 2025</span>
+                        </div>
+                        <div class="exp-company">California Air Resources Board | Sacramento, CA</div>
+                        <ul class="exp-bullets">
+                            <li>Developed Python automation scripts & web scraping tools for large-scale data transformation</li>
+                            <li>Created data visualizations with ObservableHQ; managed Drupal web content</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Featured Projects -->
+                <div class="section">
+                    <h2 class="section-title">Featured Projects</h2>
+                    
+                    <div class="project-card">
+                        <div class="project-name">HCAI GIS Web App (Senior Project)</div>
+                        <div class="project-desc">
+                            Full-stack GIS platform for California's HCAI. Built HPSA search with Azure Maps, shapefile/CSV uploads, Redis caching & PostGIS spatial rendering. Deployed with Docker.
+                        </div>
+                        <a href="https://geo.hcai.ca.gov/hpsa-search" class="project-link" target="_blank">geo.hcai.ca.gov/hpsa-search</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-name">IEEE CSUS Club Website</div>
+                        <div class="project-desc">
+                            Led front-end development for IEEE CSUS with dynamic content sections and interactive event calendar. 50+ active student users.
+                        </div>
+                        <a href="https://ieee-web-app.vercel.app" class="project-link" target="_blank">ieee-web-app.vercel.app</a>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="section">
+                    <h2 class="section-title">Education</h2>
+                    <div class="edu-item">
+                        <div class="edu-degree">B.S. Computer Science</div>
+                        <div class="edu-school">California State University, Sacramento</div>
+                        <div class="edu-date">May 2025</div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-degree">A.S. Computer Science</div>
+                        <div class="edu-school">American River College</div>
+                        <div class="edu-date">Dec 2022</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-col">
+                <!-- Skills -->
+                <div class="section">
+                    <h2 class="section-title">Technical Skills</h2>
+                    
+                    <div class="skill-category">
+                        <div class="skill-label">Languages</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">GoLang</span>
+                            <span class="skill-tag">SQL</span>
+
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-label">Frontend</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Next.js</span>
+                            <span class="skill-tag">TanStack</span>
+                            <span class="skill-tag">Vite</span>
+                            <span class="skill-tag">Tailwind CSS</span>
+                            <span class="skill-tag">HTML/JavaScript/CSS</span>
+                            <span class="skill-tag">ShadCN</span>
+                            <span class="skill-tag">Framer Motion</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-label">Backend & Cloud</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Bun</span>
+                            <span class="skill-tag">FastAPI</span>
+                            <span class="skill-tag">Django</span>
+                            <span class="skill-tag">Express.js</span>
+                            <span class="skill-tag">REST APIs</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-label">Cloud & DevOps</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">EC2</span>
+                            <span class="skill-tag">Azure</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Terraform</span>
+                            <span class="skill-tag">Nginx</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-label">Databases & Tools</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">PostGIS</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">Redis</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Okta</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Production Websites -->
+                <div class="section">
+                    <h2 class="section-title">Production Websites Built & Managed</h2>
+                    
+                    <div class="highlight-box" style="margin-bottom: 0.5rem;">
+                        <p>Full-stack development, deployment & ongoing maintenance for production web applications across multiple industries.</p>
+                    </div>
+
+                    <div class="portfolio-grid" style="margin-bottom: 0.5rem;">
+                        <div class="portfolio-item">
+                            <div class="portfolio-name">JEANS.com</div>
+                            <div class="portfolio-type">E-Commerce</div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-name">Cyboria</div>
+                            <div class="portfolio-type">NIST 800-171</div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-name">HB Facade</div>
+                            <div class="portfolio-type">Consulting</div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-name">ProCompact Estates</div>
+                            <div class="portfolio-type">Real Estate</div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-name">SoCal Sweeping</div>
+                            <div class="portfolio-type">Services</div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-name">TinyHomeCompany</div>
+                            <div class="portfolio-type">Home Builder</div>
+                        </div>
+                    </div>
+
+                    <div class="domain-links" style="display: flex; flex-wrap: wrap; gap: 0.3rem;">
+                        <a href="https://jeans.advran.opalstacked.com" target="_blank" class="skill-tag" style="text-decoration: none; cursor: pointer; font-size: 0.55rem;">jeans.advran.opalstacked.com</a>
+                        <a href="https://cyboria.advran.opalstacked.com" target="_blank" class="skill-tag" style="text-decoration: none; cursor: pointer; font-size: 0.55rem;">cyboria.advran.opalstacked.com</a>
+                        <a href="https://hbfacade.com" target="_blank" class="skill-tag" style="text-decoration: none; cursor: pointer; font-size: 0.55rem;">hbfacade.com</a>
+                        <a href="https://procompactestates.com" target="_blank" class="skill-tag" style="text-decoration: none; cursor: pointer; font-size: 0.55rem;">procompactestates.com</a>
+                        <a href="https://socalsweeping.advran.opalstacked.com" target="_blank" class="skill-tag" style="text-decoration: none; cursor: pointer; font-size: 0.55rem;">socalsweeping.advran.opalstacked.com</a>
+                        <a href="https://thattinyhomecompany.com" target="_blank" class="skill-tag" style="text-decoration: none; cursor: pointer; font-size: 0.55rem;">thattinyhomecompany.com</a>
+                    </div>
+                </div>
+
+                <!-- Key Coursework -->
+                <div class="section">
+                    <h2 class="section-title">Relevant Coursework</h2>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Web Programming</span>
+                        <span class="skill-tag">Database Systems</span>
+                        <span class="skill-tag">Software Engineering</span>
+                        <span class="skill-tag">Computer Networks</span>
+                        <span class="skill-tag">GPU Programming</span>
+                        <span class="skill-tag">Data Visualization</span>
+                        <span class="skill-tag">Software Testing & QA</span>
+                        <span class="skill-tag">Operating Systems</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="gradient-line"></div>
+            <div class="footer-content">
+                <span>Michael Mehrdadi</span>
+                <span>Full Stack Software Engineer</span>
+                <span>michaelmehrdadi123@gmail.com</span>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>

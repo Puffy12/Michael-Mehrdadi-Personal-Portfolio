@@ -36,7 +36,7 @@ export default function CarbProject({
       }}
       className="group mb-6 sm:mb-8 last:mb-0"
     >
-      <section className="bg-white dark:bg-gray-800 max-w-[50rem] border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 relative project-card">
+      <section className="bg-white dark:bg-gray-800 max-w-[50rem] border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 relative project-card group-hover:scale-105">
         {/* Animated Glowing Border */}
         <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-500 via-green-500 to-blue-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500 animate-pulse"></div>
         <div className="absolute inset-[1px] rounded-xl bg-white dark:bg-gray-800"></div>

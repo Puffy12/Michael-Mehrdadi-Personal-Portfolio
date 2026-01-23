@@ -30,43 +30,42 @@ export default function CarbHeader({ activeSection, setActiveSection }: CarbHead
       </motion.div>
 
       <nav className="flex fixed top-[0.15rem] left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0 items-center justify-center">
-        {/* CARB Logo with Spinning Animation - Centered */}
-        <div className="mr-4 sm:mr-6">
-          <motion.div
-            className="relative w-8 h-8 sm:w-12 sm:h-12"
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            {/* Spinning Logo Container */}
+        <ul className="flex items-center justify-center gap-y-2 text-sm sm:flex-nowrap sm:gap-4 sm:text-[0.9rem]">
+          {/* CARB Logo with Spinning Animation - Centered */}
+          <li className="flex items-center justify-center">
             <motion.div
-              className="relative w-full h-full bg-white rounded-full"
+              className="relative w-8 h-8 sm:w-12 sm:h-12"
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.3 }}
             >
-              <Image
-                src="/carb-pogo-2.png"
-                alt="CARB Logo"
-                fill
-                className="object-contain"
+              {/* Spinning Logo Container */}
+              <motion.div
+                className="relative w-full h-full bg-white rounded-full"
+              >
+                <Image
+                  src="/carb-pogo-2.png"
+                  alt="CARB Logo"
+                  fill
+                  className="object-contain"
+                />
+              </motion.div>
+              
+              {/* Glowing Ring Effect */}
+              <motion.div
+                className="absolute inset-0 rounded-full border-2 border-blue-400/30"
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  opacity: [0.3, 0.6, 0.3]
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
               />
             </motion.div>
-            
-            {/* Glowing Ring Effect */}
-            <motion.div
-              className="absolute inset-0 rounded-full border-2 border-blue-400/30"
-              animate={{ 
-                scale: [1, 1.2, 1],
-                opacity: [0.3, 0.6, 0.3]
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-          </motion.div>
-        </div>
-
-        <ul className="flex items-center justify-center gap-y-2 text-sm sm:flex-nowrap sm:gap-5 sm:text-[0.9rem]">
+          </li>
           {carbLinks.map((link) => (
             <motion.li
               className="flex items-center justify-center relative"
